@@ -17,7 +17,8 @@ search_for = Regexp.new(Regexp.escape(Regexp.escape(ARGV[1])),  Regexp::IGNORECA
 Kindle::File.open(ARGV[0]).parse.books.select {|book|
   book.title.match(search_for)
 }.sort.each do |book|
-  puts book.title
+  puts "### " + book.title
+  puts
   book.notes.each do |note|
     puts "- #{note.content}"
   end
