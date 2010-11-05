@@ -7,8 +7,7 @@ unless ARGV[0] && File.exists?(ARGV[0])
   exit(-1)
 end
 
-kindle_file = Kindle::File.open(ARGV[0]).parse
-kindle_file.books.sort.each do |book|
+Kindle::File.open(ARGV[0]).parse.books.sort.each do |book|
   puts book.title + " with #{book.notes.length} notes"
 end
 
