@@ -14,21 +14,13 @@ module Kindle
       books = {}
       
       @data.split("==========\r\n").each do |raw_note|
-        book_title = BookTitle.from_kindle_format(raw_note)
-        books[book_title] ||= {}
-        books[book_title][:author] ||= BookAuthor.from_kindle_format(raw_note)
-        books[book_title][:notes] ||= []
-        books[book_title][:notes] << Note.from_kindle_format(raw_note)
+        book = Book.parse_from_kindle(raw_note)
+
+        books[book.title] ||= book
+        books[book.title].notes << Note.from_kindle_format(raw_note)
       end
-      
-      books.each do |title, attributes|
-        @books ||=[]
-        book = Book.new
-        book.title = title
-        book.notes = attributes[:notes]
-        book.author = attributes[:author]
-        @books <<  book
-      end
+
+      @books = books.values
       
       self
     end
