@@ -2,9 +2,11 @@ module Kindle
   class BookAuthor
     def self.from_kindle_format(note)
       title_author, *notes = *note.split("\r\n")
-      author_match = title_author.match(/\([^()]*\)$/) # "Title (something optional) (Author)"
+      # "Title (something optional) (Author)" =>
+      #   "Author"
+      author_match = title_author.match(/\(([^()]*)\)$/)
       if author_match
-        author = author_match[0]
+        author = author_match[1]
       else
         author = ''
       end
