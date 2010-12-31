@@ -1,4 +1,5 @@
 require "kindle/book"
 require "kindle/book_title"
+require "kindle/book_author"
 require "kindle/file"
 require "kindle/note"

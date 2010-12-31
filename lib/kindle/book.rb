@@ -4,6 +4,7 @@ module Kindle
     
     attr_accessor :title
     attr_accessor :notes
+    attr_accessor :author
     
     def to_s
       "<Kindle::Book title=#{@title} >"
