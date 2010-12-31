@@ -16,6 +16,7 @@ module Kindle
 
     def to_document
       {
+        '_id' => @title,
         :title => @title,
         :author => @author,
         :notes => @notes.collect {|note| "* #{note.content}"}
