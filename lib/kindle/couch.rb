@@ -5,7 +5,19 @@ module Kindle
   class Couch
 
     def self.add(book)
-      database.save_doc(book.to_document)
+      if record = get(book) # update
+        database.save_doc(book.to_document.merge('_rev' => record['_rev']))
+      else
+        database.save_doc(book.to_document)
+      end
+    end
+
+    def self.get(book)
+      begin
+        rev = database.get(book.title)
+      rescue RestClient::ResourceNotFound => nfe
+        nil
+      end
     end
 
     def self.database
