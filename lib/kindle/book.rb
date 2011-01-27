@@ -18,6 +18,11 @@ module Kindle
       raw_notes.sort
     end
 
+    def last_updated
+      return '' if raw_notes.empty?
+      notes.last.added
+    end
+
     def to_document
       {
         '_id' => @title,
