@@ -28,7 +28,8 @@ module Kindle
         '_id' => @title,
         :title => @title,
         :author => @author,
-        :notes => notes.collect {|note| "* #{note.content}"}
+        :notes => notes.collect {|note| "* #{note.content}"},
+        :last_updated => last_updated
       }
     end
 
