@@ -17,7 +17,7 @@ module Kindle
         book = Book.parse_from_kindle(raw_note)
 
         books[book.title] ||= book
-        books[book.title].notes << Note.from_kindle_format(raw_note)
+        books[book.title].raw_notes << Note.from_kindle_format(raw_note)
       end
 
       @books = books.values
