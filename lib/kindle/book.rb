@@ -33,6 +33,15 @@ module Kindle
       }
     end
 
+    def to_file_name
+      @title.
+        downcase.
+        gsub(" ", "_"). #spaces
+        gsub("-", "_"). #dashes
+        gsub(/["|']/, ""). #quotes
+        gsub(/[\W]/,"") #non-word/ascii
+    end
+
     def self.parse_from_kindle(kindle_note)
       book = Book.new
       book.title = BookTitle.from_kindle_format(kindle_note)
