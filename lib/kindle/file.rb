@@ -9,6 +9,10 @@ module Kindle
       kindle_file
     end
 
+    def self.parse_books(file)
+      open(file).parse.books.sort
+    end
+
     def parse
       # Tmp data
       books = {}

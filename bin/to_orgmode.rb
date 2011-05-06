@@ -17,6 +17,6 @@ end
 destination_path = ARGV[1]
 FileUtils.mkdir_p destination_path
 
-Kindle::File.open(ARGV[0]).parse.books.sort.each do |book|
+Kindle::File.parse_books(ARGV[0]).each do |book|
   Kindle::OrgMode.save(book, destination_path)
 end
