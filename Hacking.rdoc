@@ -1,10 +1,10 @@
-# Hacking
+= Hacking
 
 This project grew out of a few hacks I was playing around with so it's a bit... well... hacky. I'd like to add and change a bunch of things in it but until then, I'll just note down what I'd like to add in here.
 
 To work on this project: just fork it on Github, add your changes, and send me a pull request.
 
-## TODO
+== TODO
 
 * Tests, using Test::Unit
 * Better documentation for the scripts

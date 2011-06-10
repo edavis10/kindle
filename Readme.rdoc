@@ -1,34 +1,34 @@
-# Kindle (for Ruby)
+= Kindle (for Ruby)
 
 A collection of classes and scripts that can be used to manage a kindle notes files.
 
-## Why?
+== Why?
 
 I take a bunch of notes when I read and since getting a Kindle I've started to highlight and note important things directly in the Kindle book. Then I discovered that all of the notes are stored in a plain text file on the Kindle, I set out to find a way to copy them to my computer for backup and reviewing
 
-## Uses
+== Uses
 
 * List all of the books you have notes for
 * Export your kindle notes to org-mode files, one file per book
 * Export your kindle notes to CouchDB
 
-## List Books
+== List Books
 
 The bin/list_books.rb script can be used to list all of the books you have notes for and how many notes you have.
 
-## Notes for book
+== Notes for book
 
 The bin/notes_for_book.rb script will take a book name and output all of the notes for that specific book.
 
-## Export notes to CouchDB
+== Export notes to CouchDB
 
 Using bin/setup_couch.rb and bin/import_into_couchdb.rb you can add all of your notes into CouchDB. Each book becomes a document in the 'kindle' database with the notes as an Array.
 
-## Export notes to org-mode
+== Export notes to org-mode
 
 For us emacs users, the bin/to_orgmode.rb will export all of the books to org-mode files.
 
-## Want to help?
+== Want to help?
 
 Check Hacking.rdoc
 
