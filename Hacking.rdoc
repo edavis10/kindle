@@ -1,0 +1,20 @@
+# Hacking
+
+This project grew out of a few hacks I was playing around with so it's a bit... well... hacky. I'd like to add and change a bunch of things in it but until then, I'll just note down what I'd like to add in here.
+
+To work on this project: just fork it on Github, add your changes, and send me a pull request.
+
+## TODO
+
+* Tests, using Test::Unit
+* Better documentation for the scripts
+* Better documentation for the classes (yardoc)
+* Ruby 1.9 support (not clue if it works)
+* Ruby gem, with the bin/ scripts added to the system path
+* Changing the bin/ scripts to use trollop for the arg parsing
+* Better naming for the bin/ scripts
+* Refactoring of some of the duplication in the lib/ classes
+* A local web server where you can browse your notes from a browser
+* Handle some edge cases with the kindle notes file, esp the dates
+* Kindle 3 support. It might work but I only have a Kindle 2 currently
+* YOUR PET FEATURE
