@@ -10,7 +10,7 @@ module Kindle
 
         file.puts("\n** Notes \n")
         book.notes.each do |note|
-          file.puts(note.content.to_s + "\n")
+          file.puts(note.content.to_s + "\n\n")
         end
       end
       
