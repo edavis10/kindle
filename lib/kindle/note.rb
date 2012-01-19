@@ -15,7 +15,8 @@ module Kindle
       title_author, highlight, *notes = *raw_note.split("\r\n")
       
       note = Note.new
-      location = highlight.match(/loc. (\d*)/i)
+      location = highlight.match(/loc. (\d*)/i)       # Kindle 2nd Gen
+      location ||= highlight.match(/Location (\d*)/i) # Kindle 4th Gen (touch)
       note.location = location[1].to_i if location
 
       # "Added on Wednesday, June 30, 2010, 10:35 PM"
