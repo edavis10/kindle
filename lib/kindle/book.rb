@@ -39,7 +39,8 @@ module Kindle
         gsub(" ", "_"). #spaces
         gsub("-", "_"). #dashes
         gsub(/["|']/, ""). #quotes
-        gsub(/[\W]/,"") #non-word/ascii
+        gsub(/[\W]/,""). #non-word/ascii
+        slice(0, 80) # limit filename size
     end
 
     def self.parse_from_kindle(kindle_note)
